@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enigma de Hardware</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 90%;
+            max-width: 600px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #007bff;
+        }
+        p {
+            line-height: 1.6;
+        }
+        .input-container {
+            margin: 20px 0;
+        }
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            display: none;
+            margin-top: 20px;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+        .link {
+            display: none;
+            margin-top: 20px;
+        }
+        .link a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Enigma de Hardware</h1>
+        <p>Para os amantes da tecnologia, há um grupo onde você pode descobrir segredos e truques sobre hardware. Este grupo é dedicado a explorar o mundo dos hackers de hardware.</p>
+        <p>Aqui está o enigma:</p>
+        <blockquote>
+            "Sou uma abreviação que indica uma frequência mais rápida que a de 1 GHz e sou o nome do que você precisa encontrar para se conectar com a comunidade de hackers de hardware. Qual é esse termo?"
+        </blockquote>
+        <p>Dica: A resposta é uma combinação de letras que você pode encontrar em uma frequência alta de processamento.</p>
+        <div class="input-container">
+            <input type="text" id="answer" placeholder="Digite sua resposta aqui">
+            <button onclick="checkAnswer()">Enviar</button>
+        </div>
+        <div class="result" id="result"></div>
+        <div class="link" id="link">
+            <p><strong>Recompensa:</strong> <a href="https://discord.com/invite/fHqdrrMtAG" target="_blank">Clique aqui para acessar o grupo</a></p>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const answer = document.getElementById('answer').value.trim().toLowerCase();
+            const result = document.getElementById('result');
+            const link = document.getElementById('link');
+
+            if (answer === 'subghz') {
+                result.innerHTML = '<p class="correct">Parabéns! Você acertou a resposta.</p>';
+                link.style.display = 'block';
+            } else {
+                result.innerHTML = '<p class="incorrect">Resposta incorreta. Tente novamente.</p>';
+                link.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
